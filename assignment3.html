@@ -22,8 +22,7 @@
       <li><a class="active" href="assignment3.html">Assignment 3</a></li>
       <li><a href="assignment4.html">Assignment 4</a></li>
       <li><a href="assignment5.html">Assignment 5</a></li>
-      <li><a href="assignment6.html">Assignment 6</a></li>
-    </ul>
+     </ul>
   </nav>
 </header>
 
@@ -44,10 +43,7 @@
 <section class="card">
   <h2>EM-25: Pareto Charts and Analysis</h2>
   <p>
-    Pareto charts are based on the 80/20 rule which says roughly 80% of problems come from 20% of causes. In engineering project management this means most delays, errors, and cost overruns trace back to a small number of root issues. Focusing on those root issues rather than trying to fix everything equally is what makes this method worth using.
-  </p>
-  <p>
-    For D&amp;V a Pareto analysis of BIM coordination errors across recent projects shows this breakdown:
+    Pareto charts are based on the 80/20 rule which says that 80% of problems come from 20% of causes. In engineering project management this means most delays, errors, and cost overruns that go back to any small number of issues. We have to focus on those root issue rather than trying to fix everything at once which makes it worse. In D&amp;V a Pareto analysis of the BIM coordination errors in recent projects shows this breakdown 
   </p>
 
 <pre>Coordination conflicts not caught before submission:   45%
@@ -57,20 +53,14 @@ Communication delays on client approval:               10%
 Software compatibility issues between teams:            5%</pre>
 
   <p>
-    The top two causes account for 70% of all errors. Fixing the coordination review process and enforcing model update procedures before submission will eliminate the majority of problems. Spending equal time across all five causes would spread resources too thin and produce worse results.
-  </p>
-  <p>
-    The cumulative percentage line on a Pareto chart makes this decision visible. Once two causes cross the 70% mark the team knows exactly where to put its energy. D&amp;V runs this analysis before any process improvement effort to make sure the work targets the right problem.
+    The top two causes were from 70% of all errors so if we fix the coordination review process and enforce model update procedures before submission it will eliminate majority of problems which is better than spending an the same time on all five causes which would produce worse results. The cumulative percentage line on a Pareto chart makes this decision more valid.
   </p>
 </section>
 
 <section class="card">
   <h2>EM-26: Control Charts and Analysis</h2>
   <p>
-    Control charts are used to monitor a process over time and determine whether variation is normal or signals a real problem. The p-chart is used for attribute data where each unit is either defective or not. It tracks the proportion of nonconforming units across samples and compares them to calculated control limits.
-  </p>
-  <p>
-    Using the p-chart active code template from the EM course materials, a study was run on a D&amp;V BIM coordination review process. The dataset has 12 samples of 500 units each. The nonconforming counts per sample are as follows:
+    Control charts are used to monitor a process over time and determine whether variation is normal or signals a real problem. The p chart is used for getting data to see where each there are any defects. It tracks the proportion and compares them to calculated control limits. A p chart anaylsis was done for D&amp;V to see the BIM coordination process. The dataset has 12 samples of 500 units each
   </p>
 
 <pre>Sample:    1    2    3    4    5    6    7    8    9   10   11   12
@@ -78,13 +68,13 @@ D:         5    6    8    9    7    8   16    6    9    6    7    8
 p:      0.010 0.012 0.016 0.018 0.014 0.016 0.032 0.012 0.018 0.012 0.014 0.016</pre>
 
   <p>
-    Step 1 is calculating the central line:
+   First we have to find the central line
   </p>
 
 <pre>p-bar = sum of all D / (n x k) = 95 / (500 x 12) = 0.01583</pre>
 
   <p>
-    Step 2 is calculating the control limits:
+  Then find the contorl limits
   </p>
 
 <pre>UCL = p-bar + 3 x sqrt(p-bar x (1 - p-bar) / n)
@@ -96,209 +86,91 @@ LCL = max(0, p-bar - 3 x sqrt(p-bar x (1 - p-bar) / n))
 LCL = max(0, 0.01583 - 0.01674) = 0.0</pre>
 
   <p>
-    Step 3 is plotting and interpreting. Sample 7 has p = 0.032 which is very close to the UCL of 0.03258. That spike is worth investigating. Everything else stays within limits meaning the process is generally stable but that one point needs a root cause review.
-  </p>
-  <p>
-    For variable data the X-bar and R chart takes a different approach. The variable control chart template from the course materials ran a study on pH measurements with 24 subgroups of 3 samples each. The coefficients used were A2 = 1.023, D4 = 2.574, and D3 = 0.0. The X-bar UCL came out to 7.287 and LCL to 4.841. All 24 subgroups stayed within limits confirming the process is in control for that dataset.
-  </p>
-  <p>
-    Process capability connects control charts to design requirements. The Cp index measures whether the process spread fits inside the specification limits:
+    We then have to plot and anayze the data, in sample 7 it has p = 0.032 which is very close to the UCL of 0.03258. Everything else stayed within limits meaning the process is mostly stable but at one point it needed a root analysis. The process capability connects control charts to the design requirements. The Cp index measures whether the process spread fits inside the limits
   </p>
 
 <pre>Cp = (USL - LSL) / 6σ</pre>
 
   <p>
-    A Cp above 1.33 means the process is capable. If Cp falls below 1.0 the process cannot meet requirements regardless of how well it is centered. D&amp;V uses this when evaluating whether a coordination review process is consistent enough to meet client quality thresholds.
+    A Cp above 1.33 means the process is capable but if Cp falls below 1 then process deosnt meet therequirements no matter how well it was. In D&amp;V it uses this process when evaluating whether a coordination review is consistent enough to meet client quality standrards.
   </p>
 </section>
 
 <section class="card">
   <h2>EM-27: Fishbone Diagrams</h2>
   <p>
-    The EM-27 fishbone framework organizes causes into six categories and maps them against the main problem. These diagrams are also called Ishikawa or cause and effect diagrams. The main problem sits at the head and causes branch off like bones. What makes this useful is that it forces the team to look at every angle before deciding what to fix. Most problems that keep repeating are not caused by one thing.
-  </p>
-  <p>
-    For D&amp;V a fishbone analysis was done on the most persistent problem in BIM coordination work which is clashes making it past internal review and being caught by the client after submission.
-  </p>
-  <p>
-    Methods: No standard pre-submission checklist exists, coordination review steps vary between project managers, clash detection runs are not always updated after the last design change.
-  </p>
-  <p>
-    Machines: Different Revit versions between D&amp;V and consultant teams cause export issues, workstation performance slows down large model processing, outdated plugins create compatibility errors.
-  </p>
-  <p>
-    Materials: Reference files are not always synced to the current design version, incorrect Level of Development on structural elements, old drawing sets still sitting in the shared project folder.
-  </p>
-  <p>
-    People: New team members are not fully trained on coordination tools, project engineer review happens too late in the workflow, communication gaps between CAD designers and the BIM coordinator.
-  </p>
-  <p>
-    Environment: Remote work makes real time coordination slower, overlapping project deadlines reduce the time available for proper review, shared file server access issues create version conflicts.
-  </p>
-  <p>
-    Measurement: No clear KPIs exist for coordination quality before submission, acceptance criteria are not defined at project kickoff, no tracking of how many clashes are caught internally versus by the client.
-  </p>
-  <p>
-    Looking across all six categories D&amp;V can see that Methods and Measurement are the weakest areas. The team has the technical skills but the process is inconsistent. This points toward standardizing the submission workflow rather than investing in more training or new software.
-  </p>
+    The EM-27 fishbone framework organizes causes into six categories and maps them against the main problem. These diagrams are also called cause and effect diagrams. The main problem sits at the head and the reason its useful is that it forces the team to look at every angle before deciding what to fix. Most problems that keep repeating are not caused by one thing.  
+ </p>
 </section>
 
 <section class="card">
   <h2>EM-28: Visual Factory Management</h2>
   <p>
-    Visual factory management is about making project status immediately visible without having to ask anyone or dig through reports. When information is visible everyone on the team knows where things stand and problems get noticed faster.
-  </p>
-  <p>
-    For D&amp;V this shows up in how project status is tracked day to day. Color coded task boards in Monday.com show green for on track, yellow for at risk, and red for overdue. A project manager can see the entire project health in one view without waiting for a status meeting. BIM model coordination rounds are tracked on a milestone board that shows which consultant teams have submitted, which are under review, and which have been approved.
-  </p>
-  <p>
-    Kanban boards from the lean PM framework apply directly here. D&amp;V uses a simplified kanban structure for coordination deliverables. The columns are requested, in progress, under internal review, submitted to client, and approved. Nothing moves to the next column until the previous step is confirmed complete. This eliminates the situation where work gets submitted before the internal review is actually done.
-  </p>
-  <p>
-    Performance dashboards showing CPI and SPI from the EVM calculation update weekly. When either index drops below 0.90 the project card turns yellow automatically. The project manager gets an early warning before the situation gets worse rather than finding out at the end of the month.
+    Visual factory management is about making project status immediately visible without having to ask or go through reports for it. When the information is visible to everyone on the team then eveyrone knows where things stand and how probelms get noticed fast. In D&amp;V it helps show how project status is tracked day to day and how its task boards are on Monday.com labeled as green for on track, yellow for at risk, and red for overdue. A project manager can see the entire project health in one view without waiting for a progress meeting. Kanban boards from the lean PM framework would help D&amp;V have a simplified kanban structure for coordination deliverables. The columns are requested, in progress, under internal review, submitted to client, and approved. Nothing moves to the next phase until the last phase step is complete. This removes the possible problem where work gets submitted before the internal review is done.
   </p>
 </section>
 
 <section class="card">
   <h2>EM-29: Root Cause Analysis</h2>
   <p>
-    Root cause analysis goes deeper than fixing the symptom of a problem. The goal is to find what actually caused it so the same thing does not happen again. The 5 Whys method from the EM-10 materials is one of the most direct approaches. You ask why something happened, then ask why that answer is true, and keep going until you reach the actual source.
-  </p>
-  <p>
-    D&amp;V applied the 5 Whys to a real coordination problem. A BIM model clash was caught by the client during a site review meeting instead of being caught internally before submission.
+    Root cause analysis goes deeper than just solving aproblem. The goal is to find what actually caused it so the same thing does not happen again. The 5 Whys method from the EM-10 gives a direct approache to avoid repeating problems by aksing why something happened, then ask why that answer is true, and keep going until you reach the actual source.
+  In D&amp;V the 5 Whys to solve a BIM error after already submitting it
   </p>
 
-<pre>Problem: BIM clash detected by client after submission
+<pre>Problem: BIM cerror 
 
-Why 1: The coordination check did not catch the clash
-Why 2: The clash detection run was not updated after the structural model was revised
-Why 3: No one notified the BIM coordinator that the structural model had changed
+Why 1: The coordination check did not catch the error
+Why 2: The error detection run was not updated after the structural model was revised
+Why 3: No one notified the BIM coordinator that the structural model had been changed
 Why 4: There is no automatic notification when a linked file is updated
-Why 5: The project workflow has no formal handoff step between design changes and coordination review</pre>
+Why 5: The project workflow has no formal step between design changes and coordination review</pre>
 
   <p>
-    Root cause is that the project workflow is missing a mandatory coordination trigger whenever a linked model is updated.
-  </p>
-  <p>
-    The fix is not retraining the team or buying new software. It is adding one step to the workflow. Any updated model must be logged in Monday.com before the coordination round is considered current. That one change prevents the entire chain of failures from repeating.
+   The root cause was that the project workflow is missing a mandatory coordination notifaction so whenever a linked model is updated no one would be aware. The solution would be using what we learned in the 5 whys and understand that we new a new system that give updates to the whole team. 
   </p>
 </section>
 
 <section class="card">
   <h2>EM-30: Lean Six Sigma</h2>
   <p>
-    Lean Six Sigma combines two approaches. Lean focuses on removing steps that add no value to the client. Six Sigma focuses on reducing variation and defects. Together they target both speed and quality which is exactly what BIM coordination workflows need.
-  </p>
-  <p>
-    The DMAIC process (Define, Measure, Analyze, Improve, Control) gives a structured path from problem to solution. D&amp;V applied it to reduce the number of revision cycles on BIM submittals.
-  </p>
-  <p>
-    Define: the problem is that BIM coordination submittals average 3.2 revision cycles before client approval. The target is 1.5 or fewer.
-  </p>
-  <p>
-    Measure: revision counts were tracked across 8 recent projects. The main sources were incomplete clash resolution at 40%, missing annotation standards at 30%, and incorrect sheet numbering at 30%.
-  </p>
-  <p>
-    Analyze: the Pareto and fishbone work above confirmed that the clash resolution gap comes from the workflow problem identified in the 5 Whys. The other two issues trace back to no standard submission template being enforced.
-  </p>
-  <p>
-    Improve: a submission checklist was created with mandatory clash detection confirmation, a standardized sheet template, and an annotation review step. This was applied to two pilot projects.
-  </p>
-  <p>
-    Control: revision cycles dropped to 1.8 on the pilot projects. The checklist is now part of the standard D&amp;V coordination workflow in Monday.com.
+    Lean Six Sigma combines two methods where one focuses on removing steps that add no value to the client. Six Sigma focuses on reducing variation and defects and used together they target both speed and quality of a project. The DMAIC process (Define, Measure, Analyze, Improve, Control) gives a structured path from problem to solution. In D&amp;V its applied  to reduce the number of revision cycles on BIM submittals that cause delays in projects. 
   </p>
 </section>
 
 <section class="card">
   <h2>EM-31: Modern Methods and Analysis</h2>
   <p>
-    Modern engineering project management uses tools and technologies that go beyond traditional planning methods. Industry 4.0 brings real time data, automation, and connected systems into how projects get delivered.
-  </p>
-  <p>
-    For D&amp;V the most direct Industry 4.0 application is BIM itself. Instead of coordinating designs on paper or in 2D, D&amp;V works in live 3D models where all disciplines update the same environment. Clash detection runs automatically against updated models rather than relying on manual review. That is automation applied directly to quality control.
-  </p>
-  <p>
-    Quality 4.0 takes the ISO 9001 framework and integrates digital monitoring into it. For D&amp;V this means using model checking software to automatically flag coordination issues against a defined ruleset before any human review happens. The software catches obvious errors in seconds that would take hours to find manually.
-  </p>
-  <p>
-    Digital twins are increasingly used on complex civil infrastructure projects. A digital twin is a live model that reflects the actual built condition of a structure as construction progresses. D&amp;V is positioned to offer digital twin coordination services as a natural extension of its BIM modeling work.
-  </p>
-  <p>
-    Best practices for complex construction projects focus on coordinating multiple contractors, managing trade sequences, and controlling safety compliance across an active job site. For D&amp;V this is relevant because BIM coordination directly supports construction by mapping out trade conflicts before crews arrive on site.
-  </p>
-  <p>
-    Other industries like pharmaceutical manufacturing and medical device production apply the same PM principles but add regulatory compliance layers. Pharmaceutical projects follow Good Manufacturing Practice requirements and require controlled change documentation. Medical device projects follow ISO 13485 with design history files and risk analysis at every stage. The principle across all of these sectors is that the stricter the regulatory environment, the more critical documentation and change control become.
-  </p>
-  <p>
-    IT and IS project management covers the systems and data infrastructure that support project delivery. For D&amp;V this includes cloud-based BIM collaboration platforms, secure file sharing with access controls, and version tracked document management. If these systems are not managed as a project in themselves they create coordination failures that affect every other project running on top of them.
-  </p>
+    Modern engineering project management uses tools and technologies that go beyond traditional planning methods. Industry 4.0 brings real time data, automation, and connected systems into how projects get delivered. The best practices for construction projects focus on coordinating multiple contractors, managing trade sequences, and controlling safety compliance across an active job site. In D&amp;V it helps see how BIM coordination directly supports construction by mapping out trade conflicts before crews arrive on site.
+   </p>
 </section>
 
 <section class="card">
   <h2>EM-32: Best Practice for ISO 9001 Certification</h2>
   <p>
-    ISO 9001 is the international quality management standard. It gives organizations a framework for delivering consistent quality, catching problems before they reach the client, and improving processes over time. For D&amp;V going through ISO 9001 certification would mean getting everything that already happens informally into a documented, repeatable, and auditable system.
-  </p>
-  <p>
-    The starting point is documenting all core processes. The CAD drafting workflow, BIM coordination process, client review procedure, and project closeout checklist all need to be written down, standardized, and followed consistently. Right now these processes exist but vary between projects depending on who is running the job.
-  </p>
-  <p>
-    The process approach from ISO 9001 connects directly to the flowcharts and process modeling covered in the course. Each process step needs defined inputs, outputs, controls, and resources. For D&amp;V's BIM coordination workflow that means specifying what files go in, what comes out, who reviews it, and what tools are used at each stage.
-  </p>
-  <p>
-    Continuous improvement under ISO 9001 happens through internal audits, corrective actions, and management reviews. D&amp;V already tracks defect counts from the p-chart analysis and revision cycle counts from the Lean Six Sigma work above. Those metrics feed directly into the improvement cycle. When the data shows a problem the team runs a 5 Whys analysis, finds the root cause, and updates the workflow to prevent it from happening again. That is the ISO 9001 improvement loop running in practice.
+    ISO 9001 is the international quality management standard that gives organizations a framework for delivering consistent quality, catching problems before they reach the client, and improving processes over time. In D&amp;V a ISO 9001 certification would mean getting everything that already happened informally on a document. In ISO 9001 we first start documenting all core processes like the CAD drafting workflow, BIM coordination process, client review procedure, and project closeout checklist all need to be written down, standardized, and followed consistently for D&amp;V . The consistent improvement for ISO 9001 happens because of the internal audits, corrective actions, and management reviews. D&amp;V already tracks defect counts from the p chart analysis and revision cycle counts from the Lean Six Sigma work which work directly into the improvement cycle. When the data shows a problem the team runs a 5 Whys analysis, finds the root cause, and updates the workflow to prevent it from happening again. 
   </p>
 </section>
 
 <section class="card">
   <h2>EM-33: Best Practice for ISO 27001 Certification</h2>
   <p>
-    ISO 27001 is the standard for information security management. For D&amp;V this matters because BIM models and CAD files contain detailed proprietary design information. If that data is compromised it affects the client, the project, and D&amp;V's reputation.
-  </p>
-  <p>
-    The main risks for a firm like D&amp;V are unauthorized access to project files, phishing attacks targeting team members, and data loss from unmanaged cloud storage. ISO 27001 addresses these through access control policies, encryption standards, incident response plans, and regular security training.
-  </p>
-  <p>
-    Practical ISO 27001 implementation at D&amp;V means only authorized team members can access active project files, all model files are backed up daily to a secure cloud environment, team members are trained to recognize phishing emails, and any security incident gets logged and reviewed. These are not complicated measures but without a formal standard pushing them they tend not to happen consistently on every project.
+    ISO 27001 is the standard for information security management. In D&amp;V its important because BIM models and CAD files contain detailed proprietary design information and if that data is compromised it affects the client, the project, and D&amp;V's reputation. The main risks change depending on the company but for D&amp;V the project files, phishing attacks targeting team members, and data loss from unmanaged cloud storage are not acessible easily. ISO 27001 addresses these through access control policies, encryption standards, incident response plans, and regular security training. A paractical ISO 27001 use in D&amp;V means only authorized team members can access active project files, all model files are backed up daily to a secure cloud environment, team members are trained to recognize phishing emails, and any security incident gets logged and reviewed. These are not complicated measures but without a formal standard pushing them they tend not to happen consistently on every project.
   </p>
 </section>
 
 <section class="card">
   <h2>EM-34: Why Do Projects Fail</h2>
   <p>
-    A project fails when it misses its goals, timeline, or budget. Any one of those three counts as a failure, not all three together.
-  </p>
-  <p>
-    The signs a project is failing are usually visible before the actual failure happens. CPI dropping below 0.85 and staying there is one of the clearest signals. When CPI stays below 0.85 across two consecutive milestone reviews the cost problem is structural, not a one time hit. Schedule variance that keeps widening rather than stabilizing is another sign. If SV was negative $1,500 at 40% complete and negative $4,000 at 60% complete the project is accelerating toward a miss rather than recovering.
-  </p>
-  <p>
-    Other signs include increasing client change requests that are not formally logged, the same coordination problem being flagged by the team repeatedly without resolution, and the project manager avoiding direct status conversations with the client. That last one is actually one of the most reliable early indicators that something is being hidden.
-  </p>
-  <p>
-    Saving a failing project starts with stopping the slide. That means having a direct scope conversation with the client before the situation gets worse, re-baselining the schedule based on what is actually achievable rather than what was originally planned, and identifying the critical path tasks and protecting them from further delay.
-  </p>
-  <p>
-    Conflicts within the project team are one of the most common reasons coordination projects slow down. The most frequent conflict on BIM coordination work is between the CAD designers who need more time to complete the model and the project manager who is trying to meet the submission deadline. The resolution is not choosing one side over the other. It is using the 5 Whys to understand why the model is taking longer than estimated and fixing the workflow issue that caused the estimate to be wrong in the first place.
-  </p>
-  <p>
-    D&amp;V prevents most project failures by running a thorough kickoff meeting before any work starts, using EVM to catch problems early while they are still small, and keeping a formal change request process that keeps scope and budget in sync throughout. The tools covered in this assignment from control charts to root cause analysis are all part of how D&amp;V monitors quality throughout a project rather than discovering problems at the end.
+    A project fails when it misses its goals, timeline, or budget. A project is failing are usually visible before the actual failure happens like the CPI dropping below 0.85. When CPI stays below 0.85 across two project reviews the cost problem is structural. Schedule variance that keeps widening rather than stabilizing is another sign and iff SV was negative $1,500 at 40% complete and negative $4,000 at 60% complete the project is headinf toward a failure.  More reasons a project fails in project managment is when a clients change requests arent formally logged, being flagged by the team repeatedly without soltuion , and the project manager avoiding direct status conversations with the client. That last one is actually one of the most reliable early indicators that something is being hidden. A solution to help a failing project starts with having a direct scope conversation with the client before the situation gets worse, redoing the schedule based on what is actually achievable rather than what was originally planned, and identifying the critical path tasks and protecting them from further delay. Any conflicts within the project is another reasons projects slow down. In D&amp;V a onflict like the BIM coordination work is between the CAD designers who need more time to complete the model and the project manager who is trying to meet the submission deadline. The solution there is not choosing one side over the other and using the 5 Whys so it wouldnt target anyone and help keep the balance.  In D&amp;V we would try to avoid project failures by running a thorough kickoff meeting before any work starts, using EVM to catch problems early while they are still small, and keeping a formal change request process that keeps scope and budget in sync throughout. 
   </p>
 </section>
 
-<section class="card">
-  <h2>Technical Illustration</h2>
-  <p>
-    A fishbone diagram can be used to show the causes of BIM coordination errors, such as communication issues, software problems, and incorrect data. This helps visually explain how problems are analyzed and solved.
-  </p>
-</section>
 
 <section class="card">
   <h2>Conclusion</h2>
   <p>
-    This assignment covered the main quality analysis and process improvement tools used in engineering project management. Pareto charts and control charts use data to show where problems are concentrated and whether a process is stable. Fishbone diagrams and root cause analysis find the actual cause rather than just the symptom. Lean Six Sigma and the DMAIC process give a structured path from problem identification to permanent fix. ISO 9001 and ISO 27001 provide the management framework that holds all of these practices together consistently over time.
-  </p>
-  <p>
-    For D&amp;V Civil Engineering Management these methods apply directly to improving BIM coordination quality, reducing revision cycles, and protecting project data. The p-chart analysis showed the coordination review process is mostly in control with one spike worth investigating. The Pareto analysis showed two causes account for 70% of all errors. The 5 Whys traced the main coordination problem to a missing workflow step rather than a skills gap. Each of these findings leads to a specific fix rather than a general suggestion to do better. That is what makes these tools worth using.
+    This assignment went over the quality analysis and process improvement tools used in engineering project management. Pareto charts and control charts use data to show where problems are concentrated and whether a process is stable. Fishbone diagrams and root cause analysis find the actual cause rather than just the symptom. Lean Six Sigma and the DMAIC process give a structured path from problem identification to permanent fix. ISO 9001 and ISO 27001 provide the management framework that holds all of these practices together consistently over time.
+For D&amp;V Civil Engineering Management these methods apply directly to improving BIM coordination quality, reducing revision cycles, and protecting project data. The p-chart analysis showed the coordination review process is mostly in control with one spike worth investigating. The Pareto analysis showed two causes account for 70% of all errors. The 5 Whys traced the main coordination problem to a missing workflow step rather than a skills gap. Each of these findings leads to a specific fix rather than a general suggestion to do better. That is what makes these tools worth using.
   </p>
 </section>
 
