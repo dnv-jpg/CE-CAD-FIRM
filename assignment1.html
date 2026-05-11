@@ -24,8 +24,7 @@
 <li><a href="assignment3.html">Assignment 3</a></li>
 <li><a href="assignment4.html">Assignment 4</a></li>
 <li><a href="assignment5.html">Assignment 5</a></li>
- <li><a href="assignment6.html">Assignment 6</a></li>
-</ul>
+ </ul>
 </nav>
 </header>
 
@@ -41,10 +40,7 @@
 <section class="card">
 <h2>Introduction</h2>
 <p>
-A project in engineering management is not just a list of tasks. It is about organizing resources like labor, equipment, technology, and time to hit a specific goal within a real budget and a real deadline. Resources are always limited so project managers are constantly making calls about what gets priority and what gets adjusted.
-</p>
-<p>
-Modern engineering management means combining technical knowledge with actual management decisions. That combination is what makes the role hard. This assignment covers the core topics from EM-2 through EM-12 including project terminology, team organization, earned value management, pricing strategies, change management, teamwork, and avoiding failures. All of it is applied to D&amp;V Civil Engineering Management which focuses on CAD modeling, BIM coordination, and sustainable civil engineering design.
+A project in engineering management isnt just a list of tasks. It is about organizing resources like labor, equipment, technology, and time to hit a specific goal within a real budget and deadline. Resources are always limited so project managers are constantly making calls about what gets priority and what gets adjusted. In modern engineering management means combining technical knowledge with actual management decisions and with this combination is what makes the role hard. This assignment covers the core topics from EM-2 through EM-12 including project terminology, team organization, earned value management, pricing strategies, change management, teamwork, and avoiding failures. All of it is applied to D&amp;V Civil Engineering Management which focuses on CAD modeling, BIM coordination, and sustainable civil engineering design.
 </p>
 </section>
 
@@ -62,14 +58,13 @@ subject to:
   S &gt;= S_min</pre>
 
 <p>
-Compressing the schedule almost always raises cost because more labor is needed to finish faster. Cutting the budget either stretches the timeline or reduces scope. Every decision the project manager makes is a tradeoff between these three variables. That is the actual job.
+When compressing the schedule it almost always raises cost because more labor is needed to finish faster. Cutting the budget either stretches the timeline or reduces scope. Every decision the project manager makes is a tradeoff between these three variables which is actual job.
 </p>
 <p>
 A Python grid search can find the best combination of time and cost for a given project. The version below is adapted for a D&amp;V BIM coordination project:
 </p>
 
-<pre># D&amp;V Project Multi-Variable Optimization
-# Based on EM-2 pseudocode adapted for D&amp;V Civil Engineering Management
+<pre> D&amp;V Project Multi-Variable Optimization from EM-2 pseudocode 
 
 x_min, x_max = 10, 60
 y_min, y_max = 5000, 30000
@@ -92,13 +87,7 @@ print('Optimal schedule:', best_x, 'days')
 print('Optimal budget: $', best_y)</pre>
 
 <p>
-Running this with D&amp;V parameters gives an optimal schedule around 35 to 40 days at a budget near $18,000 to hit the target quality threshold. The output matters less than what it teaches. Change any one input and the result shifts. That is why project monitoring has to be ongoing, not just at the start.
-</p>
-<p>
-Solving a project management problem follows eight steps: define the problem, gather data, analyze the actual cause, generate solutions, pick the best one, implement it, evaluate the results, then refine and repeat. For D&amp;V this means reviewing the full client scope document before committing to any schedule or price.
-</p>
-<p>
-Lean project management is about cutting anything that does not add value for the client. At D&amp;V that shows up in how coordination reviews run. Instead of sending full BIM models back and forth with no clear process, D&amp;V runs clash detection internally before anything goes to the client. Fewer revision cycles means the project keeps moving.
+Running this with D&amp;V parameters gives an optimal schedule around 35 to 40 days at a budget of $18,000 to hit the target. The output matters less than what it teaches because if it changes then so will the result. That is why project monitoring has to be ongoing, not just at the start. Solving a project management problem follows eight steps; defining the problem, gathering data, analyzing the actual cause, generating solutions, picking the best one, implementing it, evaluating the results, then refine and repeat. In D&amp;V this means reviewing the full client scope document before committing to any schedule or price. Lean project management is about cutting anything that does not add value for the client so if applied at D&amp;V it will help in coordination reviews run so less back and fourths and it will help the project keeps moving.
 </p>
 </section>
 
@@ -107,8 +96,7 @@ Lean project management is about cutting anything that does not add value for th
 <h2>EM-3: Best Practices for Organizing and Staffing the Project Office and Team</h2>
 <p>
 What actually makes a project team work comes down to four values: RESPECT, TRUST, TRANSPARENCY, and ETHICAL practice. A team without trust hides problems until they are too big to fix. A team that is not transparent buries cost overruns. In civil engineering where coordination errors have real financial consequences, these values directly affect whether a project gets delivered on time and on budget.
-</p>
-<p>
+ 
 The matrix organization is the most practical team structure for D&amp;V. Team members report to both a project manager and a technical department lead. A CAD designer on a BIM coordination project stays connected to their technical discipline while also being accountable to the project schedule. A purely functional structure makes cross department coordination too slow for the kind of work D&amp;V does.
 </p>
 <p>
@@ -152,8 +140,7 @@ For WBS tracking D&amp;V uses Monday.com where project phases are set up as grou
 The Shortest Processing Time algorithm is a scheduling method that sorts tasks by duration and completes the shortest ones first. This reduces total average completion time across all jobs. The script below is applied to a real D&amp;V BIM coordination project schedule:
 </p>
 
-<pre># SPT Scheduling Algorithm
-# Based on EM-5 pseudocode applied to D&amp;V Civil Engineering Management
+<pre># SPT Scheduling Algorithm from on EM-5 pseudocode 
 
 tasks = {
     "Client coordination meeting": 1,
